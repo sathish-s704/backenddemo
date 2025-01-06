@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 dotenv.config();
-const port = process.env.PORT || 3000 || 4000;
+const port = process.env.PORT || 4000;
 const db = process.env.MONGO_URI;
 app.use('/api/user', router);
 
