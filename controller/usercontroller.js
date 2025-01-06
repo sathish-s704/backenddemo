@@ -65,11 +65,11 @@ export const deleteuser= async (req, res) => {
 export const findid=async(req,res)=>{   
     try{
         const id=req.params.id;
-        const userexist=await user.findOne({_id:id});
-        if(!userexist){
+        const user = await user.findOne({_id:id});
+        if(!user){
             return res.status(404).json({message:"user not found"});
         }
-        res.status(200).json({userexist});
+        res.status(200).json({user});
     }
     catch(err){
         res.status(500).json({ error:"internal server error" });
